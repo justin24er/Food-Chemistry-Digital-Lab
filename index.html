@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Food Chemistry Digital Laboratory — Interactive Practical Manual</title>
+<meta name="description" content="An interactive digital laboratory built directly from the Food Chemistry Practical Manual (AS6201): orientation, quantitative analysis and chemical-property practicals, real calculations, acceptance criteria and report generation.">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/variables.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/instruments.css">
+<link rel="stylesheet" href="css/practicals.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"></span>
+      Food Chemistry Digital Laboratory
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#top">Lab</a></li>
+        <li><a href="#orientation">Orientation</a></li>
+        <li><a href="#practicals">Practicals</a></li>
+        <li><a href="#safety">Safety</a></li>
+        <li><a href="#reports">Reports</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="eyebrow">AS6201 · Practical Manual → Digital Laboratory</div>
+      <h1 class="hero-type">
+        <span>FOOD</span>
+        <span class="accent-word">CHEMISTRY</span>
+      </h1>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p>Food Chemistry, brought into the laboratory. Explore the practical methods used to analyze the composition and chemical properties of food.</p>
+          <div class="btn-row">
+            <button class="btn btn-primary" id="enter-lab-cta">Enter the digital lab</button>
+            <a class="btn btn-ghost" href="#practicals">Explore practicals</a>
+          </div>
+        </div>
+        <div class="hero-stage" id="hero-stage" aria-label="Rotating 3D laboratory glassware">
+          <div class="corner-ticks"></div>
+          <div class="hero-stage-label">Apple sample (Practical 3.1) · drag to orbit</div>
+        </div>
+      </div>
+      <div class="hero-stat-row">
+        <div class="hero-stat"><b>9</b><span>Manual practicals</span></div>
+        <div class="hero-stat"><b>3</b><span>Practical groups</span></div>
+        <div class="hero-stat"><b>8</b><span>Simulated instruments</span></div>
+        <div class="hero-stat"><b>2</b><span>Learning &amp; assessment modes</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MODULE INDEX ============ -->
+  <section class="section" aria-label="How the digital laboratory works">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Read → Enter → Perform</span>
+        <h2 class="step-2" style="font-size:var(--step-2);">The manual, transformed into a working lab</h2>
+        <p>Every practical below is rebuilt from the supplied Food Chemistry Practical Manual — objective, principle, materials, apparatus, cautions, procedure, calculation, acceptance criteria and references, all faithfully reproduced and made interactive.</p>
+      </div>
+      <div class="index-grid">
+        <div class="index-card reveal"><span class="num">001</span><h4>Prepare</h4><p>Review hazards, select apparatus, and acknowledge safety cautions before any measurement begins.</p></div>
+        <div class="index-card reveal"><span class="num">002</span><h4>Perform</h4><p>Step through the manual's own procedure, weighing, titrating, and reading real instruments.</p></div>
+        <div class="index-card reveal"><span class="num">003</span><h4>Calculate</h4><p>See inputs, formula, substitution and result — every number sourced from the manual's own equations.</p></div>
+        <div class="index-card reveal"><span class="num">004</span><h4>Report</h4><p>Check duplicate results against the manual's acceptance criteria, then draft a guided practical report.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ORIENTATION ============ -->
+  <section class="section" id="orientation">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Practical 1</span>
+        <h2 style="font-size:var(--step-2);">Laboratory orientation</h2>
+        <p>Know the location and operation of the laboratory's health and safety equipment before starting any practical — exactly as required by Practical 1, section 1.1 of the manual.</p>
+      </div>
+      <div id="orientation-mount"></div>
+    </div>
+  </section>
+
+  <!-- ============ SAFETY ============ -->
+  <section class="section" id="safety">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Laboratory Safety and Health Rules</span>
+        <h2 style="font-size:var(--step-2);">Safety comes before every practical</h2>
+        <p>The manual's general, chemical-handling, emergency, biological and cleaning rules — condensed into an interactive reference. Each practical also carries its own specific cautions and hazards.</p>
+      </div>
+      <div id="safety-accordion"></div>
+    </div>
+  </section>
+
+  <!-- ============ PRACTICALS DASHBOARD ============ -->
+  <section class="section" id="practicals">
+    <div class="wrap">
+      <div class="section-head section-head--split">
+        <div>
+          <span class="eyebrow">Practicals 2 &amp; 3</span>
+          <h2 style="font-size:var(--step-2);">Practical dashboard</h2>
+        </div>
+        <p style="max-width:36ch;">Quantitative analysis of food components, and the chemical properties of foods — select a practical to open its digital workspace.</p>
+      </div>
+      <div class="practical-grid" id="practical-grid"></div>
+    </div>
+  </section>
+
+  <!-- ============ REPORTS / RESULTS INFO ============ -->
+  <section class="section" id="reports">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">Practical Report Guidelines</span>
+        <h2 style="font-size:var(--step-2);">Every practical ends in a report</h2>
+        <p>Each practical's Report tab drafts a research-article-style report from the manual's own guidelines — title, abstract, introduction, materials &amp; methods, results, discussion, conclusion and references — pre-filled with the results you actually recorded, never fabricated data. A built-in checker mirrors the manual's marking scheme.</p>
+      </div>
+      <div class="stat-strip">
+        <div><b>200</b><span>Word abstract limit</span></div>
+        <div><b>8</b><span>Report sections</span></div>
+        <div><b>100</b><span>Marking scheme total</span></div>
+        <div><b>±2 SD</b><span>Control-chart criterion</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">About this laboratory</span>
+        <h2 style="font-size:var(--step-2);">A manual-driven digital simulation</h2>
+        <p>This site is built directly from the Food Chemistry Practical Manual (AS6201), Department of Applied Sciences, Mbeya University of Science and Technology. It is an educational digital simulation, not a substitute for supervised laboratory work — every hazard, procedure, formula and acceptance criterion shown is sourced from the manual, with any unavoidable gaps clearly marked as user-entered rather than presented as manual fact.</p>
+      </div>
+      <ul class="link-list">
+        <li>Vanilla HTML5 / CSS3 / JavaScript (ES modules) with Three.js for 3D laboratory glassware.</li>
+        <li>See <code>docs/manual-mapping.md</code> for a full feature → manual section map.</li>
+        <li>See <code>docs/scientific-sources.md</code> for the manual's own references.</li>
+        <li>See <code>docs/asset-credits.md</code> for 3D asset sources and licensing.</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4>Food Chemistry Digital Laboratory</h4>
+        <p style="max-width:32ch;font-size:.85rem;">An interactive transformation of the AS6201 Food Chemistry Practical Manual.</p>
+      </div>
+      <div>
+        <h4>Practicals</h4>
+        <ul>
+          <li><a href="#orientation">1 · Orientation</a></li>
+          <li><a href="#practicals">2 · Food components</a></li>
+          <li><a href="#practicals">3 · Chemical properties</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Reference</h4>
+        <ul>
+          <li><a href="#safety">Lab safety rules</a></li>
+          <li><a href="#reports">Report guidelines</a></li>
+          <li><a href="FOOD_CHEMISTRY_PRACTICAL_MANUAL_GUIDEBOOK/Practical Manual-Food Chemistry-AS6201.docx">Source manual</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Project</h4>
+        <ul>
+          <li><a href="README.md">README</a></li>
+          <li><a href="docs/manual-mapping.md">Manual mapping</a></li>
+          <li><a href="docs/asset-credits.md">Asset credits</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year"></span> Food Chemistry Digital Laboratory — educational simulation, not a substitute for supervised laboratory work.</span>
+      <span>Source: Practical Manual, Food Chemistry (AS6201), Mbeya University of Science and Technology</span>
+    </div>
+  </div>
+</footer>
+
+<!-- practical workspace modal -->
+<div class="modal-scrim" id="modal-scrim"></div>
+<div class="lab-modal" id="lab-modal" role="dialog" aria-modal="true" aria-label="Practical workspace">
+  <div class="lab-panel" id="lab-panel"></div>
+</div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
