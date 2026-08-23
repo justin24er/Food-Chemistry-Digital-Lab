@@ -1,0 +1,142 @@
+/* ============================================================
+   LABORATORY INSTRUMENT UI
+   ============================================================ */
+.instrument{
+  border: var(--border-w) solid var(--ink);
+  background: var(--surface-raised);
+  padding: 1.2rem;
+  margin-bottom: 1.4rem;
+}
+.instrument-head{
+  display:flex; justify-content:space-between; align-items:center;
+  font-family: var(--font-mono); font-size:.68rem; letter-spacing:.08em; text-transform:uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem; padding-bottom:.6rem; border-bottom:1px dashed var(--border);
+}
+.instrument-head .live{ color: var(--ok); display:flex; align-items:center; gap:.35rem; }
+.instrument-head .live::before{ content:""; width:6px;height:6px;background:var(--ok);display:inline-block; }
+
+.readout-grid{
+  display:grid; grid-template-columns: repeat(auto-fit, minmax(120px,1fr)); gap:1px;
+  background: var(--border); border: var(--border-w) solid var(--border); margin-bottom:1rem;
+}
+.readout{
+  background: var(--surface); padding:.7rem .8rem;
+}
+.readout label{ display:block; font-family: var(--font-mono); font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color: var(--ink-mute); margin-bottom:.25rem; }
+.readout .value{ font-family: var(--font-mono); font-size:1.25rem; color: var(--ink); }
+.readout .unit{ font-size:.7rem; color: var(--ink-mute); margin-left:.2rem; }
+
+.control-row{ display:flex; gap:1rem; align-items:center; flex-wrap:wrap; margin-bottom: 1rem; }
+.control-row label{ font-family: var(--font-mono); font-size:.68rem; text-transform:uppercase; letter-spacing:.05em; color: var(--ink-soft); }
+
+.field{ display:flex; flex-direction:column; gap:.3rem; }
+.field input[type="number"], .field input[type="text"], .field select{
+  font-family: var(--font-mono); font-size:.92rem;
+  border: var(--border-w) solid var(--border-strong);
+  background: var(--surface);
+  padding:.5rem .6rem; width: 9rem;
+}
+.field input:focus, .field select:focus{ border-color: var(--ink); }
+
+input[type="range"]{
+  -webkit-appearance:none; appearance:none;
+  width:100%; height: 4px; background: var(--border-strong); outline:none;
+}
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance:none; width:16px; height:16px; border-radius:50%;
+  background: var(--lime); border: 2px solid var(--ink); cursor:pointer; margin-top:-6px;
+}
+input[type="range"]::-moz-range-thumb{
+  width:14px;height:14px;border-radius:50%; background: var(--lime); border: 2px solid var(--ink); cursor:pointer;
+}
+
+/* balance */
+.balance-plate{
+  border: var(--border-w) solid var(--border-strong);
+  height: 70px; display:flex; align-items:center; justify-content:center;
+  font-family: var(--font-mono); font-size:1.8rem; background: var(--surface);
+  margin-bottom: .8rem; position:relative;
+}
+.balance-plate::before{ content:"g"; position:absolute; right:.8rem; bottom:.5rem; font-size:.8rem; color: var(--ink-mute); }
+
+/* burette / titration visual */
+.burette-wrap{ display:flex; gap: 1.6rem; align-items:flex-end; flex-wrap:wrap; }
+.burette{
+  width: 42px; height: 220px;
+  border: 2px solid var(--ink); border-top:none;
+  position:relative; background: linear-gradient(var(--surface),var(--surface));
+  flex:none;
+}
+.burette .fill{
+  position:absolute; left:0; right:0; bottom:0; background: #C9D6E8;
+  transition: height var(--dur-med) var(--ease);
+}
+.burette .tick{ position:absolute; left:-8px; width:8px; height:1px; background: var(--ink-mute); }
+.titration-flask{
+  width: 130px; height: 130px; position:relative; flex:none;
+}
+.titration-flask svg{ width:100%; height:100%; }
+.titration-flask .liquid{ transition: fill var(--dur-med) var(--ease); }
+
+/* ph meter */
+.ph-dial{
+  border: var(--border-w) solid var(--ink); padding: 1rem; text-align:center; width: 160px;
+}
+.ph-dial .big{ font-family: var(--font-mono); font-size: 2.6rem; line-height:1; }
+.ph-scale{ height:10px; background: linear-gradient(90deg, #C0392B, #E67E22, #F1C40F, #2ECC71, #2E86C1, #6C3483); margin-top:.8rem; position:relative; }
+.ph-scale .marker{ position:absolute; top:-4px; width:2px; height:18px; background: var(--ink); }
+
+/* refractometer eyepiece */
+.refractometer-view{
+  width: 100%; aspect-ratio: 1/1; max-width: 220px;
+  border-radius:50%; border: 3px solid var(--ink);
+  background: radial-gradient(circle at 50% 40%, #eef, #223 120%);
+  position:relative; overflow:hidden; margin: 0 auto 1rem;
+}
+.refractometer-view .split{
+  position:absolute; left:0; right:0; background:#dfe7ef;
+  transition: top var(--dur-med) var(--ease);
+}
+.refractometer-view .crosshair{ position:absolute; inset:0; }
+.refractometer-view .crosshair::before, .refractometer-view .crosshair::after{
+  content:""; position:absolute; background: rgba(255,255,255,.5);
+}
+.refractometer-view .crosshair::before{ left:50%; top:0; bottom:0; width:1px; }
+.refractometer-view .crosshair::after{ top:50%; left:0; right:0; height:1px; }
+
+/* chromatogram (HPLC) canvas card */
+.chromatogram-card{ border: var(--border-w) solid var(--border-strong); background: var(--surface); padding: .8rem; }
+.chromatogram-card canvas{ width:100%; height:220px; }
+.peak-legend{ display:flex; gap: 1rem; flex-wrap:wrap; margin-top:.6rem; font-family: var(--font-mono); font-size:.68rem; }
+.peak-legend span{ display:inline-flex; align-items:center; gap:.35rem; }
+.peak-swatch{ width:10px; height:10px; display:inline-block; }
+
+/* furnace / crucible temp gauge */
+.furnace-gauge{ display:flex; align-items:center; gap:1rem; }
+.furnace-bar{ flex:1; height:14px; background: var(--border); position:relative; }
+.furnace-bar .fill{ height:100%; background: linear-gradient(90deg,#E67E22,#A3311B); transition: width var(--dur-med) var(--ease); }
+
+/* apparatus checklist chips */
+.apparatus-chip{
+  display:inline-flex; align-items:center; gap:.4rem;
+  border: var(--border-w) solid var(--border-strong); padding: .35rem .7rem;
+  font-size:.78rem; margin: 0 .5rem .5rem 0; cursor:pointer; background: var(--surface);
+}
+.apparatus-chip[data-selected="true"]{ border-color: var(--ink); background: var(--lime); }
+.apparatus-chip input{ display:none; }
+
+/* calculation transparency panel */
+.calc-steps{ display:grid; gap: .6rem; margin: 1rem 0; }
+.calc-step{
+  border-left: 3px solid var(--border-strong);
+  padding: .6rem .9rem; background: var(--surface); font-family: var(--font-mono); font-size:.84rem;
+}
+.calc-step .label{ display:block; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color: var(--ink-mute); margin-bottom:.25rem; font-family: var(--font-mono); }
+
+/* acceptance result box */
+.acceptance-box{ border: var(--border-w) solid var(--ink); padding: 1.1rem 1.3rem; margin: 1.2rem 0; display:flex; justify-content:space-between; align-items:center; gap: 1rem; flex-wrap:wrap; }
+.acceptance-box .result-value{ font-family: var(--font-display); font-size: 2.2rem; }
+.acceptance-pill{ font-family: var(--font-mono); font-size:.72rem; letter-spacing:.06em; text-transform:uppercase; padding:.4rem .8rem; border: var(--border-w) solid var(--ink); }
+.acceptance-pill[data-state="pass"]{ background: var(--ok-bg); color: var(--ok); border-color: var(--ok); }
+.acceptance-pill[data-state="check"]{ background: var(--danger-bg); color: var(--danger); border-color: var(--danger); }
+.acceptance-pill[data-state="pending"]{ background: var(--surface); color: var(--ink-mute); }

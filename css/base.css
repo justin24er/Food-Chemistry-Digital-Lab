@@ -1,0 +1,86 @@
+/* ============================================================
+   RESET + BASE TYPOGRAPHY
+   ============================================================ */
+*, *::before, *::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *, *::before, *::after{ animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; scroll-behavior: auto !important; }
+}
+
+body{
+  margin:0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: var(--step-body);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img, video, svg, canvas{ display:block; max-width:100%; }
+
+h1,h2,h3,h4{
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0 0 0.5em;
+  line-height: 1.05;
+}
+
+p{ margin:0 0 1em; color: var(--ink-soft); }
+a{ color: inherit; }
+button{ font-family: inherit; }
+
+.eyebrow{
+  font-family: var(--font-mono);
+  font-size: var(--step-micro);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-mute);
+  display:flex;
+  align-items:center;
+  gap:.6em;
+}
+.eyebrow::before{
+  content:"";
+  width: 1.6em;
+  height: 1px;
+  background: var(--border-strong);
+  display:inline-block;
+}
+
+.mono{ font-family: var(--font-mono); }
+
+.visually-hidden{
+  position:absolute !important;
+  width:1px;height:1px;
+  padding:0;margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;border:0;
+}
+
+.skip-link{
+  position:absolute;
+  left: 1rem; top:-3rem;
+  background: var(--lime);
+  color: var(--lime-ink);
+  padding: .6rem 1rem;
+  z-index: 999;
+  font-family: var(--font-mono);
+  font-size: .8rem;
+  transition: top var(--dur-fast) var(--ease);
+}
+.skip-link:focus{ top: 1rem; }
+
+:focus-visible{
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+button:focus-visible, a:focus-visible{
+  outline: 2px solid var(--ink);
+  outline-offset: 2px;
+}
+
+::selection{ background: var(--lime); color: var(--lime-ink); }

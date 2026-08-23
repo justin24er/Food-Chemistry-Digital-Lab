@@ -1,0 +1,12 @@
+{
+  "name": "food-chemistry-digital-laboratory",
+  "version": "1.0.0",
+  "description": "An interactive digital laboratory built directly from the Food Chemistry Practical Manual (AS6201). Vanilla HTML/CSS/JS with Three.js for 3D laboratory glassware. No build step required.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "serve": "npx serve ."
+  },
+  "license": "UNLICENSED"
+}
