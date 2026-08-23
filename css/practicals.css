@@ -1,0 +1,92 @@
+/* ============================================================
+   PRACTICAL-SPECIFIC LAYOUT (procedure steps, orientation map, report)
+   ============================================================ */
+
+/* procedure stepper */
+.procedure-list{ counter-reset: step; list-style:none; margin:0; padding:0; }
+.procedure-item{
+  counter-increment: step;
+  border: var(--border-w) solid var(--border);
+  padding: 1rem 1.1rem 1rem 3.4rem;
+  position:relative;
+  margin-bottom: -1px;
+  background: var(--surface);
+}
+.procedure-item::before{
+  content: counter(step, decimal-leading-zero);
+  position:absolute; left: 1.1rem; top: 1rem;
+  font-family: var(--font-mono); font-size:.78rem; color: var(--ink-mute);
+}
+.procedure-item[data-state="done"]{ background: var(--ok-bg); }
+.procedure-item[data-state="active"]{ border-color: var(--ink); }
+.procedure-item[data-state="locked"]{ opacity:.5; }
+.procedure-item h4{ font-size:.98rem; margin:0 0 .3rem; }
+.procedure-item p{ font-size:.85rem; margin:0 0 .7rem; }
+.procedure-actions{ display:flex; gap:.6rem; flex-wrap:wrap; }
+.procedure-actions .btn{ padding:.55rem .9rem; font-size:.7rem; }
+
+/* orientation floor plan */
+.floorplan{
+  position:relative;
+  border: var(--border-w) solid var(--ink);
+  background:
+    linear-gradient(var(--surface),var(--surface)) padding-box,
+    repeating-linear-gradient(0deg, transparent, transparent 39px, var(--border) 40px),
+    repeating-linear-gradient(90deg, transparent, transparent 39px, var(--border) 40px);
+  aspect-ratio: 16/10;
+  overflow:hidden;
+}
+.floor-bench{
+  position:absolute; background: var(--bg-warm); border: var(--border-w) solid var(--border-strong);
+}
+.hotspot{
+  position:absolute; width: 34px; height:34px; transform: translate(-50%,-50%);
+  border-radius:50%; border: 2px solid var(--ink); background: var(--surface-raised);
+  display:flex; align-items:center; justify-content:center; cursor:pointer;
+  font-family: var(--font-mono); font-size:.9rem;
+  transition: background var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease);
+  padding: 0;
+}
+.hotspot:hover, .hotspot:focus-visible{ background: var(--lime); transform: translate(-50%,-50%) scale(1.08); }
+.hotspot[data-visited="true"]{ border-style: solid; box-shadow: 0 0 0 3px var(--ok-bg); }
+.hotspot-label{
+  position:absolute; bottom:-1.6rem; left:50%; transform:translateX(-50%);
+  font-family: var(--font-mono); font-size:.6rem; text-transform:uppercase; letter-spacing:.04em;
+  white-space:nowrap; color: var(--ink-mute);
+}
+.orientation-detail{
+  border: var(--border-w) solid var(--ink); background: var(--surface-raised); padding:1.3rem; min-height: 100%;
+}
+.orientation-detail h4{ margin-bottom:.4rem; }
+.orientation-detail .tag{ margin-bottom:.6rem; }
+
+/* report builder */
+.report-doc{
+  border: var(--border-w) solid var(--border-strong);
+  background: var(--surface-raised);
+  padding: clamp(1.4rem, 3vw, 2.6rem);
+  font-family: Georgia, "Times New Roman", serif;
+  max-width: 74ch;
+}
+.report-doc h3{ font-family: Georgia, serif; font-size: 1.3rem; margin-top: 1.6rem;}
+.report-doc h3:first-child{ margin-top:0; }
+.report-doc textarea{
+  width:100%; border:none; background: transparent; resize:vertical;
+  font-family: Georgia, "Times New Roman", serif; font-size: .95rem; line-height:1.6; color: var(--ink);
+  min-height: 90px; padding:0;
+}
+.report-doc textarea:focus{ outline: 1px dashed var(--border-strong); }
+.report-meta{ font-family: var(--font-mono); font-size:.72rem; color: var(--ink-mute); text-transform:uppercase; letter-spacing:.05em; margin-bottom: 1.5rem; }
+
+.marking-row{ display:grid; grid-template-columns: 1fr auto; gap:1rem; align-items:center; padding:.55rem 0; border-bottom: 1px dashed var(--border); font-size:.85rem; }
+.marking-row input[type="checkbox"]{ width:18px; height:18px; accent-color: var(--lime); }
+
+/* learning/assessment hint box */
+.hint-box{ border: 1px dashed var(--border-strong); padding:.8rem 1rem; font-size:.84rem; color: var(--ink-soft); margin:.8rem 0; background: var(--bg-warm); }
+.hint-box b{ color: var(--ink); }
+
+/* data source pill (distinguishes manual value vs user-entered vs food-db) */
+.source-pill{ font-family: var(--font-mono); font-size:.6rem; letter-spacing:.05em; text-transform:uppercase; padding:.15rem .4rem; border:1px solid var(--border-strong); margin-left:.4rem; }
+.source-pill--manual{ color: var(--ink); }
+.source-pill--user{ color: var(--info); border-color: var(--info); }
+.source-pill--fooddata{ color: var(--ok); border-color: var(--ok); }

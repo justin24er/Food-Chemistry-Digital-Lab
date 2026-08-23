@@ -1,0 +1,11 @@
+/* ============================================================
+   RESET
+   ============================================================ */
+html, body, div, span, h1, h2, h3, h4, p, a, ul, ol, li, form, label, footer, header, nav, main, section, button, input, select, textarea, canvas, figure{
+  margin:0; padding:0; border:0; font: inherit; vertical-align: baseline;
+}
+ul, ol{ list-style: none; }
+button, input, select, textarea{ background:none; color:inherit; border:none; }
+button{ cursor:pointer; }
+a{ text-decoration:none; }
+table{ border-collapse:collapse; border-spacing:0; }

@@ -1,0 +1,63 @@
+/* ============================================================
+   FOOD CHEMISTRY DIGITAL LABORATORY — DESIGN TOKENS
+   Palette: warm laboratory notebook + acid-lime instrumentation accent
+   ============================================================ */
+:root{
+  /* --- surfaces & ink --- */
+  --bg:            #F3F1EB;
+  --bg-warm:       #ECE8DD;
+  --surface:       #FBFAF5;
+  --surface-raised:#FFFFFF;
+  --ink:           #17170F;
+  --ink-soft:      #4B4A40;
+  --ink-mute:      #868475;
+  --border:        #D8D4C4;
+  --border-strong: #BEBAA6;
+
+  /* --- accent: acid lime, used sparingly for active/selected/passing states --- */
+  --lime:          #D9F500;
+  --lime-ink:      #17170F;
+  --lime-deep:     #A8C000;
+
+  /* --- signal colors (status of a measurement / acceptance) --- */
+  --ok:            #3F6B2E;
+  --ok-bg:         #E4EFD8;
+  --warn:          #92600B;
+  --warn-bg:       #F4E7C8;
+  --danger:        #A3311B;
+  --danger-bg:     #F3DCD2;
+  --info:          #2E4A6B;
+  --info-bg:       #DCE6EF;
+
+  /* --- type --- */
+  --font-display: "Neue Haas Grotesk Display", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", ui-monospace, "Roboto Mono", Menlo, Consolas, monospace;
+
+  /* --- scale --- */
+  --step-hero: clamp(3.6rem, 12vw, 10.5rem);
+  --step-1: clamp(2.1rem, 5vw, 3.6rem);
+  --step-2: clamp(1.5rem, 3vw, 2.1rem);
+  --step-3: clamp(1.15rem, 1.6vw, 1.35rem);
+  --step-body: 1rem;
+  --step-small: 0.82rem;
+  --step-micro: 0.7rem;
+
+  /* --- geometry --- */
+  --radius: 2px;
+  --radius-lg: 3px;
+  --border-w: 1px;
+  --gutter: clamp(1.1rem, 4vw, 3rem);
+  --maxw: 1360px;
+
+  /* --- motion --- */
+  --ease: cubic-bezier(.22,.61,.36,1);
+  --dur-fast: 140ms;
+  --dur-med: 320ms;
+  --dur-slow: 640ms;
+}
+
+@media (prefers-color-scheme: dark){
+  /* Laboratory theme intentionally stays fixed/light for print-like scientific
+     legibility; dark scheme users still get full contrast via same tokens. */
+}
