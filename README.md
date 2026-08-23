@@ -7,7 +7,7 @@ note, procedure, formula and acceptance criterion in this site is sourced from
 that manual:see `docs/manual-mapping.md` for a full feature-by-feature trace
 back to the source document.
 
-## The Design Overview
+## Design Overview
 
 ![design_overview](./readmeCatchup-img/design_overview.png)
 
