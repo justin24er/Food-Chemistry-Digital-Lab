@@ -9,7 +9,7 @@ back to the source document.
 
 ## Design Overview
 
-![design_overview](./readmeCatchup-img/design_overview.png)
+![design_overview](./readmeCatchup-img/design_overview.gif)
 
 ## Description
 
