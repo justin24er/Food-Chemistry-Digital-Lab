@@ -87,4 +87,8 @@ function renderYear(){
   if (y) y.textContent = new Date().getFullYear();
 }
 
-window.addEventListener("practical:closed", renderPracticalGrid);
+window.addEventListener("practical:closed", () => {
+  renderPracticalGrid();
+  // Re-rendered cards are not tracked by the initial reveal observer, so show them directly.
+  document.querySelectorAll("#practical-grid .reveal").forEach(card => card.classList.add("is-visible"));
+});
