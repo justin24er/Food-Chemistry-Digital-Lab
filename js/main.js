@@ -92,3 +92,5 @@ window.addEventListener("practical:closed", () => {
   // Re-rendered cards are not tracked by the initial reveal observer, so show them directly.
   document.querySelectorAll("#practical-grid .reveal").forEach(card => card.classList.add("is-visible"));
 });
+
+/*------- REQUIRED 3D rendering-------achieved by tomorrow. */
